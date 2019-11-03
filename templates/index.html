@@ -9,8 +9,10 @@
 <body>
     <nav class = 'navbar navbar-expand-lg navbar-light bg-light'>
         <div class = 'container-fluid'>
-            <div class = 'navbar-header'>
-                <a class = 'navbar-brand' href = '#'>現正播出 {{tv.name}}</a>
+            <div class = 'navbar-brand' align = 'center'>
+                {% load static %}
+                <img src = "{% static "images/television.png" %}" width = 60/>
+                {{tv.name}}
             </div>
             <div class = 'collapse navbar-collapse'>
                 <ul class = 'navbar-nav mr-auto'>
