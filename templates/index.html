@@ -3,10 +3,11 @@
 {% block tvname %}{{tv.name}}{% endblock %}
 {% block menu %}
     <ul class = 'navbar-nav mr-auto'>
-        <li class = 'active nav-item'><a class="nav-link" href = '/'>Home</a></li>
-        <li class="nav-item"><a class="nav-link" href = '{% url 'tv-url' 0 %}'>東森</a></li>
-        <li class="nav-item"><a class="nav-link" href = '{% url 'tv-url' 1 %}'>民視</a></li>
-        <li class="nav-item"><a class="nav-link" href = '{% url 'tv-url' 2 %}'>華視</a></li>
+        {% for t in tv_list %}
+        <li class="nav-item">
+            <a class="nav-link" href = '{% url 'tv-url' forloop.counter0 %}'>{{t.name}}</a>
+        </li>
+        {% endfor %}
     </ul>
 {% endblock %}
 {% block content %}
