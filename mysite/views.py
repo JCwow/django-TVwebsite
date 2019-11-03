@@ -11,4 +11,14 @@ def index(request, tvno = 0):
     tvno = tvno
     tv = tv_list[tvno]
     return render(request, 'index.html', locals())
+def engtv(request, tvno = 0):
+    tv_list = [
+        {'name': 'SkyNews', 'tvcode': '9Auq9mYxFEE'},
+        {'name': 'Euro News', 'tvcode': 'jgGOQF_14wI'},
+        {'name': 'DW News', 'tvcode': 'NvqKZHpKs-g'},
+    ]
+    now = datetime.now()
+    tvno = tvno
+    tv = tv_list[int(tvno)]
+    return render(request, 'engtv.html', locals())
     
