@@ -10,6 +10,7 @@ def index(request, tvno = 0):
     now = datetime.now()
     tvno = tvno
     tv = tv_list[tvno]
+    hour = now.timetuple().tm_hour
     return render(request, 'index.html', locals())
 def engtv(request, tvno = 0):
     tv_list = [

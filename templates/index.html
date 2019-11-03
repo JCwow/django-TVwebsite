@@ -10,9 +10,16 @@
     </ul>
 {% endblock %}
 {% block content %}
+    {% if hour >= 12 %}
+        <div align='center'>Good Afternoon!</div>
+    {% elif hour < 12 %}
+        <div align='center'>Good Morning!</div>
+    {% endif %}
+    <br>
     <div class = 'container'>
         <div id = 'tvcode' align='center'>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{tv.tvcode}}?autoplay=1" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 {% endblock %}
+
